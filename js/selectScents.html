@@ -5,6 +5,7 @@
     .center {
       font-family: 'Poppins', sans-serif;
       text-align: center;
+      padding: 10px;
     }
 
     #id_scents input[type="checkbox"] {
@@ -21,7 +22,7 @@
       color:black;
     }
     
-    #id_scents[type="checkbox"]:checked + span {
+    #id_scents input[type="checkbox"]:checked + span {
       background-color: rgb(211, 255, 163);
       color: black;
     }
@@ -76,7 +77,10 @@
       <label><input type="checkbox" name="scents" value="29"><span>tobacco</span></label>
       <label><input type="checkbox" name="scents" value="30"><span>leather</span></label>
     </p>
+
     
+    <a href="#" class="previous">&laquo; previous</a>
+    <a href="#" class="next">next &raquo;</a>
 
   </div>
 
