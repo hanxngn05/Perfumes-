@@ -2,12 +2,25 @@
 <html lang="en">
 <head>
   <style>
+    * {
+        box-sizing: border-box;
+        margin: 10;
+        padding: 10;
+        font-family: 'Poppins', sans-serif;
+        font-size: 20px;
+        line-height: 1.5;
+        background-color:aliceblue;
+        text-align: center;
+    }
+    /* May not need center */
     .center {
       font-family: 'Poppins', sans-serif;
       text-align: center;
       padding: 10px;
     }
 
+
+    /* Styling for the Scent checkboxes*/
     #id_scents input[type="checkbox"] {
       display: none;
     }
@@ -15,16 +28,42 @@
     #id_scents span {
       display: inline-block;
       padding: 10px;
+      margin: 5px;
       border: 2px solid ;
       font-family: 'Poppins', sans-serif;
       border-radius: 3px;
-      border-color: rgb(211, 255, 163);
+      border-color: rgb(82, 174, 255);
       color:black;
     }
     
     #id_scents input[type="checkbox"]:checked + span {
-      background-color: rgb(211, 255, 163);
+      background-color: rgb(82, 174, 255);
+      color: white;
+    }
+
+    /* Styling for the prev/next boxes */
+    a {
+      text-decoration: none;
+      display: inline-block;
+      padding: 8px 16px;
+    }
+  
+    a:hover {
+      background-color: #ddd;
       color: black;
+    }
+    
+    .previous {
+      color: black;
+    }
+    
+    .next {
+      background-color:rgb(199, 229, 255);
+      color: black;
+    }
+    
+    .round {
+      border-radius: 50%;
     }
 
   </style>
