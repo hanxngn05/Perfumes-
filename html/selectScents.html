@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <style>
+    * {
+    box-sizing: border-box;
+    margin: 10;
+    padding: 10;
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.5;
+    background-color:aliceblue;
+    text-align: center;
+        }
+
+    /* Styling for the Scent checkboxes*/
+    .all_scents input[type="checkbox"] {
+      display: none;
+    }
+
+    .all_scents span {
+      display: inline-block;
+      padding: 10px;
+      margin: 5px;
+      border: 2px solid ;
+      border-radius: 3px;
+      border-color: rgb(82, 174, 255);
+      color:black;
+    }
+
+    .all_scents input[type="checkbox"]:checked + span {
+      background-color: rgb(82, 174, 255);
+      color: white;
+    }
+
+    /* Styling for the prev/next boxes */
+    a {
+      text-decoration: none;
+      display: inline-block;
+      padding: 8px 16px;
+    }
+
+    a:hover {
+      background-color: #ddd;
+      color: black;
+    }
+
+    .previous {
+      color: black;
+    }
+
+    .next {
+      background-color:rgb(199, 229, 255);
+      color: black;
+    }
+
+    .round {
+      border-radius: 50%;
+    }
+  </style>
+  <title>Perfume Recommender</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title> Perfume Recommender </title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&display=swap" rel="stylesheet">
+  
+
+</head>
+
+
+<body>
+
+    <h1>Perfume Recommender</h1>
+    <h3>Please select up to 3 scents!</h3>
+
+    <div class="all_scents">
+      <label><input type="checkbox" class="scents" value="1"><span>bergamot</span></label>
+      <label><input type="checkbox" class="scents" value="2"><span>lemon</span></label>
+      <label><input type="checkbox" class="scents" value="3"><span>pink pepper</span></label>
+      <label><input type="checkbox" class="scents" value="4"><span>saffron</span></label>
+      <label><input type="checkbox" class="scents" value="5"><span>grapefruit</span></label>
+      <label><input type="checkbox" class="scents" value="6"><span>cardamom</span></label>
+      <label><input type="checkbox" class="scents" value="7"><span>mandarin orange</span></label>
+      <label><input type="checkbox" class="scents" value="8"><span>rose</span></label>
+      <label><input type="checkbox" class="scents" value="9"><span>neroli</span></label>
+      <label><input type="checkbox" class="scents" value="10"><span>lavender</span></label>
+      <label><input type="checkbox" class="scents" value="11"><span>jasmine</span></label>
+      <label><input type="checkbox" class="scents" value="12"><span>citrus</span></label>
+      <label><input type="checkbox" class="scents" value="13"><span>incense</span></label>
+      <label><input type="checkbox" class="scents" value="14"><span>amber</span></label>
+      <label><input type="checkbox" class="scents" value="15"><span>black pepper</span></label>
+      <label><input type="checkbox" class="scents" value="16"><span>vanilla</span></label>
+      <label><input type="checkbox" class="scents" value="17"><span>ginger</span></label>
+      <label><input type="checkbox" class="scents" value="18"><span>yuzu</span></label>
+      <label><input type="checkbox" class="scents" value="19"><span>aldehydes</span></label>
+      <label><input type="checkbox" class="scents" value="20"><span>lime</span></label>
+      <label><input type="checkbox" class="scents" value="21"><span>musk</span></label>
+      <label><input type="checkbox" class="scents" value="22"><span>oud</span></label>
+      <label><input type="checkbox" class="scents" value="23"><span>petitgrain</span></label>
+      <label><input type="checkbox" class="scents" value="24"><span>orange blossom</span></label>
+      <label><input type="checkbox" class="scents" value="25"><span>sandalwood</span></label>
+      <label><input type="checkbox" class="scents" value="26"><span>tuberose</span></label>
+      <label><input type="checkbox" class="scents" value="27"><span>mint</span></label>
+      <label><input type="checkbox" class="scents" value="28"><span>patchouli</span></label>
+      <label><input type="checkbox" class="scents" value="29"><span>tobacco</span></label>
+      <label><input type="checkbox" class="scents" value="30"><span>leather</span></label>
+    </div>
+
+    
+    <a href="results.html" class="next">next &raquo;</a>
+
+    <!-- Must call after all labels created NVM NOT WORKING-->
+    <!-- <script type="text/javascript" src="first.js"></script> -->
+
+    <script>
+    /* Makes the checkbox only allow 2 items to be selected */
+    document.querySelectorAll('.all_scents input[type=checkbox]').forEach(el=>{
+      el.addEventListener('change', function(){
+        if (el.closest('.all_scents').querySelectorAll('input:checked').length > 3 ){
+        this.setCustomValidity('There is a maximum of three items that can be selected')
+        this.checked = false
+        this.reportValidity()
+        // error will not show because checkboxes are hidden with css design
+        }else{
+            // add scent to data collection / store it
+        }
+      })
+    });
+    </script>
+
+
+     
+    
+    
+</body>
+</html>
