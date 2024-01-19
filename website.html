@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfume Data Analysis</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <h1>Perfume Data Analysis</h1>
+
+    <div id="perfumeData"></div>
+
+    <script>
+        // Your JavaScript code to fetch and display data goes here
+        fetch('/get_data')
+            .then(response => response.json())
+            .then(data => {
+                // Process and display data on the webpage
+                document.getElementById('perfumeData').innerText = JSON.stringify(data, null, 2);
+            })
+            .catch(error => console.error('Error fetching data:', error));
+    </script>
+</body>
+</html>
