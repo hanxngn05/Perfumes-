@@ -3,33 +3,15 @@
 <head>
   <style>
     * {
-    box-sizing: border-box;
-    margin: 10;
-    padding: 10;
-    font-family: 'Poppins', sans-serif;
-    line-height: 1.5;
-    background-color:aliceblue;
-    text-align: center;
-        }
-
-    /* Styling for the Scent checkboxes*/
-    .all_scents input[type="checkbox"] {
-      display: none;
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Poppins', sans-serif;
+      text-align: center;
     }
 
-    .all_scents span {
-      display: inline-block;
-      padding: 10px;
-      margin: 5px;
-      border: 2px solid ;
-      border-radius: 3px;
-      border-color: rgb(82, 174, 255);
-      color:black;
-    }
-
-    .all_scents input[type="checkbox"]:checked + span {
-      background-color: rgb(82, 174, 255);
-      color: white;
+    body{
+      background-color:aliceblue;
     }
 
     /* Styling for the prev/next boxes */
@@ -37,6 +19,7 @@
       text-decoration: none;
       display: inline-block;
       padding: 8px 16px;
+      margin-bottom: 100px;
     }
 
     a:hover {
@@ -56,6 +39,119 @@
     .round {
       border-radius: 50%;
     }
+
+    .imageContained {
+      width: 150px;
+    }
+
+    img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    .shopping-cart {
+      width: 600px;
+      height: auto;
+      margin: 30px auto;
+      background: #FFFFFF;
+      box-shadow: 1px 2px 3px 0px rgba(0,0,0,0.10);
+      border-radius: 6px;
+      display: flex;
+      flex-direction: column;
+    }
+    .title {
+      height: 60px;
+      border-bottom: 1px solid #E1E8EE;
+      padding: 20px 30px;
+      color: #5E6977;
+      font-size: 18px;
+      font-weight: 400;
+    }
+
+    .item {
+      border-bottom: 1px solid #E1E8EE;
+      padding: 20px 30px;
+      color: #5E6977;
+      height: 250px;
+      display: flex;
+    }
+    .item:nth-child(3) {
+      border-top:  1px solid #E1E8EE;
+      border-bottom:  1px solid #E1E8EE;
+    }
+
+    .delete-btn,
+    .like-btn {
+      display: inline-block;
+      Cursor: pointer;
+    }
+    .delete-btn {
+      width: 18px;
+      height: 17px;
+      background: url(&amp;quot;https://cdn.icon-icons.com/icons2/2714/PNG/512/x_thin_icon_171414.png&amp;quot;) no-repeat center;
+    }
+    
+    .like-btn {
+      position: absolute;
+      top: 9px;
+      left: 15px;
+      background: url('https://cdn.icon-icons.com/icons2/2073/PNG/512/heart_like_love_twitter_icon_127132.png');
+      width: 60px;
+      height: 60px;
+      background-size: 2900%;
+      background-repeat: no-repeat;
+    }
+    .image {
+      margin-right: 50px;
+    }
+    
+    .description {
+      padding-top: 10px;
+      margin-left: 60px;
+      width: 300px;
+    }
+    
+    .description span {
+      display: block;
+      font-size: 14px;
+      color: #43484D;
+      font-weight: 400;
+    }
+    
+    .description span:first-child {
+      margin-bottom: 5px;
+    }
+    .description span:last-child {
+      font-weight: 300;
+      margin-top: 8px;
+      color: #86939E;
+    }
+
+    @media (max-width: 1000px) {
+      .shopping-cart {
+        width: 100%;
+        height: auto;
+        overflow: hidden;
+      }
+      .item {
+        height: auto;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+      .image img {
+        width: 50%;
+      }
+      .imageContained,
+      .quantity,
+      .description {
+        width: 100%;
+        text-align: center;
+        margin: 0;
+      }
+    }
+
+
   </style>
   <title>Perfume Recommender</title>
   <meta charset="UTF-8">
@@ -72,17 +168,63 @@
 <body>
 
     <h1>Perfume Recommender</h1>
-    <h3>Here's what we recommend!</h3>
 
-    <div class="all_perfumes">
-      <label><input type="checkbox" class="perfume" value="1"><span>Perfume 1</span></label>
-      <label><input type="checkbox" class="perfume" value="2"><span>Perfume 2</span></label>
-      <label><input type="checkbox" class="perfume" value="3"><span>Perfume 2</span></label>
-      <label><input type="checkbox" class="perfume" value="4"><span>Perfume 2</span></label>
+    <div class="shopping-cart">
+      <!-- Title -->
+      <div class="title">
+        Our recommendations
+      </div>
+     
+      <!-- Product #1 -->
+      <div class="item">
+        <div class="imageContained">
+          <img src="https://static.luckyscent.com/images/products/73905.jpg?width=400&404=product.png" alt="examplePerfume" />
+        </div>
+     
+        <div class="description">
+          <span>Rosas Secas Eau de Parfum</span>
+          <span>Coqui Coqui</span>
+          <span>Notes: Rose, tobacco, powder notes</span>
+        </div>
+
+        
+      </div>
+     
+      <!-- Product #2 -->
+      <div class="item">
+     
+        <div class="imageContained">
+          <img src="https://static.luckyscent.com/images/products/313062.jpg?width=400&404=product.png" alt="examplePerfume" />
+        </div>
+     
+        <div class="description">
+          <span>Eau de Yuzu Eau de Toilette</span>
+          <span>PARFUMS DE NICOLAI</span>
+          <span>Notes: Yuzu, lemon leaf, juniper, grapefruit, gaiac, patchouli</span>
+        </div>
+      </div>
+     
+      <!-- Product #3 -->
+      <div class="item">
+     
+        <div class="imageContained">
+          <img src="https://static.luckyscent.com/images/products/36141.jpg?width=400&404=product.png" alt="examplePerfume" />
+        </div>
+     
+        <div class="description">
+          <span>Santal Maiuscule Eau de Parfum</span>
+          <span>Serge Lutens</span>
+          <span>Notes: Sandalwood, rose, cocoa, tonka bean</span>
+        </div>
+      </div>
     </div>
 
+
+
+
+
     <a href="selectScents.html" class="previous">&laquo; previous</a>
-    <a href="results.html" class="next">next &raquo;</a>
+    <!-- <a href="results.html" class="next">next &raquo;</a> -->
 
     <!-- Must call after all labels created NVM NOT WORKING-->
     <!-- <script type="text/javascript" src="second.js"></script> -->
