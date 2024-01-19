@@ -19,5 +19,9 @@ Our design allows the user to choose 3 desired scents for their perfume. We use 
 - Python - Jupyter Notebook - To clean and isolate important data
 - HTML/CSS and JavaScript - To set up the front-end website design and backend functionalities in the website
 
+## Sources
+Here are some really helpful sources used to help code this project:
+https://designmodo.com/shopping-cart-ui/
+
 ## Project status
 This project was made by @hanxngn05, @jessica-b-dai, and @EWANGE0. It is currently actively being worked on as of Friday, Jan 19, 2024.
